@@ -20,7 +20,7 @@ window.addEventListener('scroll', () => {
     const section = document.querySelector(li.querySelector('a')
     .getAttribute('href'));
 
-    if(fromTop >= getOffset(section).top - 250) {
+    if(fromTop >= getOffset(section).top - section.offsetHeight) {
       removeActive();
       addActive(li)
     }
