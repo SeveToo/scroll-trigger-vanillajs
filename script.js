@@ -1,4 +1,5 @@
 const myNavList = document.querySelectorAll('.myNavList>li');
+const sectionList = document.querySelectorAll('section');
 
 function getOffset(el) {
   const rect = el.getBoundingClientRect();
@@ -18,7 +19,8 @@ window.addEventListener('scroll', () => {
   
   myNavList.forEach(li => {
     const section = document.querySelector(li.querySelector('a')
-    .getAttribute('href'));
+    .getAttribute('href')).parentElement;
+    console.log(section);
 
     if(fromTop >= getOffset(section).top - section.offsetHeight*1.1) {
       removeActive();
